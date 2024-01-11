@@ -36,21 +36,13 @@ class MyThemes {
           ),
         ),
       ),
-      toggleableActiveColor: const Color(0xff021226),
       primaryColor: Colors.black,
       dividerColor: Colors.white,
       colorScheme: const ColorScheme.dark(),
       iconTheme: const IconThemeData(color: Colors.white),
-      secondaryHeaderColor: Colors.blueGrey[700]!,
-      // secondaryHeaderColor: const Color(0xff141414),
-      dialogBackgroundColor: Colors.white,
-      backgroundColor: Colors.blue.shade700,
-      highlightColor: Colors.white,
-      primaryColorDark: Colors.grey[900],
-      primaryColorLight: Colors.grey[500],
-      focusColor: Colors.grey[900],
+
       disabledColor: Colors.grey[900],
-      scaffoldBackgroundColor: Colors.grey[900]);
+  );
 
   static final lightTheme = ThemeData(
       textTheme: TextTheme(
@@ -61,21 +53,13 @@ class MyThemes {
           ),
         ),
       ),
-      toggleableActiveColor: const Color(0xfffff7EC),
       dividerColor: Colors.black,
       primaryColor: Colors.white,
       colorScheme: const ColorScheme.light(),
       iconTheme: const IconThemeData(
         color: Colors.black,
       ),
-      // secondaryHeaderColor: const Color.fromARGB(255, 245, 237, 237),
-      dialogBackgroundColor: Colors.blue,
-      backgroundColor: Colors.grey.shade500,
-      highlightColor: Colors.black,
-      primaryColorDark: Colors.grey.shade200,
-      primaryColorLight: Colors.grey.shade700,
-      focusColor: const Color(0xfff5f5f5),
+
       disabledColor: Colors.white,
-      scaffoldBackgroundColor: Color(0xfff5f7f8),
-      secondaryHeaderColor: Colors.blue.withOpacity(.2));
+     );
 }

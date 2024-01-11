@@ -6,9 +6,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pinput.dart';
 
 
-
-
-
 TextEditingController _mobileController = TextEditingController();
 class PhoneAuthScreen extends StatefulWidget {
   @override
@@ -361,7 +358,12 @@ class _OtpScreenState extends State<OtpScreen> {
         elevation: 0,
         leading: GestureDetector(
             onTap: () {
-
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => PhoneAuthScreen(),
+                ),
+              );
             },
             child:  Icon(
               Icons.arrow_back_ios_new,
@@ -553,6 +555,56 @@ class _OtpScreenState extends State<OtpScreen> {
                       child: Padding(
                         padding: const EdgeInsets.only(top: 3.0),
                         child: Text('Resend OTP',style: GoogleFonts.poppins(
+                            color: Color.fromRGBO(255, 255, 255, 1),
+                            // fontFamily: 'Poppins',
+                            fontSize: 17,
+                            letterSpacing:
+                            0 /*percentages not used in flutter. defaulting to zero*/,
+                            fontWeight: FontWeight.w500,
+                            height: 1),),
+                      ),
+                      style: ButtonStyle(
+                          overlayColor:
+                          MaterialStateProperty.resolveWith<Color>(
+                                (Set<MaterialState> states) {
+                              if (states.contains(MaterialState.pressed)) {
+                                return Colors.white.withOpacity(0.8);
+                              }
+                              return Colors.transparent;
+                            },
+                          ),
+                          shape: MaterialStateProperty.all<
+                              RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0), // Adjust the radius as needed
+                            ),
+                          ),
+                          backgroundColor:_isResendButtonEnabled? MaterialStateProperty.all<Color>(Color.fromRGBO(0, 25, 50, 1))
+                              : MaterialStateProperty.all<Color>(Colors.grey,
+                          )),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 280,
+                    height: 40,
+                    child: ElevatedButton(
+                      onPressed: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => PhoneAuthScreen(),
+                          ),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 3.0),
+                        child: Text('Change Number',style: GoogleFonts.poppins(
                             color: Color.fromRGBO(255, 255, 255, 1),
                             // fontFamily: 'Poppins',
                             fontSize: 17,
